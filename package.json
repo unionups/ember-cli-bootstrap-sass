@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-bootstrap-sass",
   "author": "Sergey Nikolaev",
-  "description": "Include bootstrap-sass into an ember-cli app",
+  "description": "Include bootstrap-sass and bootstrap-for-ember into an ember-cli app",
   "version": "0.1",
   "directories": {
     "doc": "doc",
