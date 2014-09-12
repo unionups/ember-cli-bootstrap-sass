@@ -53,7 +53,7 @@ accepts an array of component names:
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp({
-  'ember-cli-bootstrap': {
+  'ember-cli-bootstrap-sass': {
     'components': ['bs-alert', 'bs-notifications', 'bs-nav']
   }
 });
@@ -81,7 +81,7 @@ javascript into your ember-cli project by setting the
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp({
-  'ember-cli-bootstrap': {
+  'ember-cli-bootstrap-sass': {
     'importBootstrapJS': true
   }
 });
