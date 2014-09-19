@@ -38,10 +38,10 @@ module.exports = {
     }
 
     // Import glyphicons
-    app.import(path.join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.eot'), { destDir: '/fonts' });
-    app.import(path.join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.svg'), { destDir: '/fonts' });
-    app.import(path.join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.ttf'), { destDir: '/fonts' });
-    app.import(path.join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.woff'), { destDir: '/fonts' });
+    app.import(path.join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.eot'), { destDir: '/fonts/bootstrap' });
+    app.import(path.join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.svg'), { destDir: '/fonts/bootstrap' });
+    app.import(path.join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.ttf'), { destDir: '/fonts/bootstrap' });
+    app.import(path.join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.woff'), { destDir: '/fonts/bootstrap' });
 
     //symlinking bootstrap sass styles to app dir
     var destBootstrapSourcePath = path.join(modulePath, 'app/styles/bootstrap');
