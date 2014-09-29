@@ -32,7 +32,7 @@ Import Bootstrap styles in `app/styles/app.scss`
 
 By default all of Bootstrap is imported.
 
-You can also import components explicitly. To start with a full list of modules copy [bootstrap.scss](https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap.scss) file into your `app/styles` folder as `_bootstrap-custom.scss`. Then comment out components you do not want from bootstrap-custom. In the application Sass file, replace `@import 'bootstrap'` with:
+You can also import components explicitly. To start with a full list of modules copy [bootstrap.scss](https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/_bootstrap.scss) file into your `app/styles` folder as `_bootstrap-custom.scss`. Then comment out components you do not want from bootstrap-custom. In the application Sass file, replace `@import 'bootstrap'` with:
 
 ```javascript
 @import 'bootstrap-custom';
