@@ -12,7 +12,7 @@ This is an ember-cli addon that includes styles from [official Sass port](http:/
 This addon utilizes the [bootstrap_for_ember](https://github.com/ember-addons/bootstrap-for-ember) library, which provides a collection of Ember components based on Twitter Bootstrap V3.
 You can find documentation for usage [here](https://github.com/ember-addons/bootstrap-for-ember).
 
-#Usage
+#Installation
 
 In the root of your ember-cli project directory, run:
 ```bash
