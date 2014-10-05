@@ -22,7 +22,7 @@ npm install --save-dev ember-cli-bootstrap-sass
 You should now have access to bootstrap styles and the components
 provided by [bootstrap_for_ember](https://github.com/ember-addons/bootstrap-for-ember). Enjoy!
 
-#Configuration
+#Usage
 
 Import Bootstrap styles in `app/styles/app.scss`
 
@@ -32,11 +32,29 @@ Import Bootstrap styles in `app/styles/app.scss`
 
 By default all of Bootstrap is imported.
 
+You can also include optional bootstrap theme:
+
+```javascript
+  @import "bootstrap/theme";
+```
+
+The full list of bootstrap variables can be found [here](http://getbootstrap.com/customize/#less-variables). You can override these by simply redefining the variable before the `@import` directive, e.g.:
+
+```javascript
+$navbar-default-bg: #312312;
+$light-orange: #ff8c00;
+$navbar-default-color: $light-orange;
+
+@import "bootstrap";
+```
+
 You can also import components explicitly. To start with a full list of modules copy [bootstrap.scss](https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/_bootstrap.scss) file into your `app/styles` folder as `_bootstrap-custom.scss`. Then comment out components you do not want from bootstrap-custom. In the application Sass file, replace `@import 'bootstrap'` with:
 
 ```javascript
 @import 'bootstrap-custom';
 ```
+
+
 
 ##Importing specific bootstrap_for_ember components
 By default, all of the bootstrap_for_ember components will be imported

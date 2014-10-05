@@ -2,7 +2,7 @@
   "name": "ember-cli-bootstrap-sass",
   "author": "Sergey Nikolaev",
   "description": "Include bootstrap-sass and bootstrap-for-ember into an ember-cli app",
-  "version": "0.1.62",
+  "version": "0.2.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "bower install"
@@ -20,8 +20,14 @@
     "ember",
     "ember-cli"
   ],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
   "license": "MIT",
+  "ember-addon": {
+    "before": "ember-cli-sass"
+  },
   "dependencies": {
-    "broccoli-kitchen-sink-helpers": "^0.2.4"
+    "ember-cli-sass": "^1.0.2"
   }
 }
