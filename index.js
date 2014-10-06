@@ -12,8 +12,8 @@ module.exports = {
 
     var options         = app.options['ember-cli-bootstrap-sass'] || {};
     var modulePath      = path.relative(app.project.root, __dirname);
-    var bootstrapPath   = 'vendor/bootstrap-sass-official/assets/';
-    var emberBsPath     = 'vendor/ember-addons.bs_for_ember/dist'
+    var bootstrapPath   = 'vendor/bootstrap-sass-official/assets';
+    var emberBsPath     = 'vendor/ember-addons.bs_for_ember/dist';
     var javascriptsPath = path.join(emberBsPath, 'js');
     var jsFiles         = options.components ? options.components : fs.readdirSync(path.join(modulePath, javascriptsPath));
 
