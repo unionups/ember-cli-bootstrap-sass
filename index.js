@@ -1,6 +1,11 @@
 var fs   = require('fs');
 var path = require('path');
 
+var path_join = finction(){
+  // fix path with windows back slash with path_join
+  return path.join(arguments).replace(/\\/g, '/');
+};
+
 module.exports = {
   name: 'ember-cli-bootstrap-sass',
   included: function included(app) {
@@ -14,35 +19,35 @@ module.exports = {
     var modulePath      = path.relative(app.project.root, __dirname);
     var bootstrapPath   = 'vendor/bootstrap-sass-official/assets';
     var emberBsPath     = 'vendor/ember-addons.bs_for_ember/dist';
-    var javascriptsPath = path.join(emberBsPath, 'js');
-    var jsFiles         = options.components ? options.components : fs.readdirSync(path.join(modulePath, javascriptsPath));
+    var javascriptsPath = path_join(emberBsPath, 'js');
+    var jsFiles         = options.components ? options.components : fs.readdirSync(path_join(modulePath, javascriptsPath));
 
 
     app.options.sassOptions = {
-        includePaths: [ path.join(modulePath, bootstrapPath, 'stylesheets') ]
+        includePaths: [ path_join(modulePath, bootstrapPath, 'stylesheets') ]
     };
 
     // Import css from bootstrap
 
-    app.import(path.join(emberBsPath, 'css/bs-growl-notifications.min.css'));
+    app.import(path_join(emberBsPath, 'css/bs-growl-notifications.min.css'));
 
     // Import javascript files
-    app.import(path.join(javascriptsPath, 'bs-core.max.js')); // Import bs-core first
+    app.import(path_join(javascriptsPath, 'bs-core.max.js')); // Import bs-core first
 
     jsFiles.forEach(function(file) {
       var fileName = file.split('.')[0];
-      app.import(path.join(javascriptsPath, fileName + '.max.js'));
+      app.import(path_join(javascriptsPath, fileName + '.max.js'));
     });
 
     if (options.importBootstrapJS) {
-      app.import(path.join(bootstrapPath, 'javascripts/bootstrap.js'));
+      app.import(path_join(bootstrapPath, 'javascripts/bootstrap.js'));
     }
 
     // Import glyphicons
-    app.import(path.join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.eot'), { destDir: '/fonts/bootstrap' });
-    app.import(path.join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.svg'), { destDir: '/fonts/bootstrap' });
-    app.import(path.join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.ttf'), { destDir: '/fonts/bootstrap' });
-    app.import(path.join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.woff'), { destDir: '/fonts/bootstrap' });
+    app.import(path_join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.eot'), { destDir: '/fonts/bootstrap' });
+    app.import(path_join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.svg'), { destDir: '/fonts/bootstrap' });
+    app.import(path_join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.ttf'), { destDir: '/fonts/bootstrap' });
+    app.import(path_join(bootstrapPath, 'fonts/bootstrap/glyphicons-halflings-regular.woff'), { destDir: '/fonts/bootstrap' });
 
 
   }
