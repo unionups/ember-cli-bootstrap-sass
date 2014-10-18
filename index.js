@@ -1,9 +1,9 @@
 var fs   = require('fs');
 var path = require('path');
 
-var path_join = finction(){
+var path_join = function(){
   // fix path with windows back slash with path_join
-  return path.join(arguments).replace(/\\/g, '/');
+  return path.join.apply(this, arguments).replace(/\\/g, '/');
 };
 
 module.exports = {
