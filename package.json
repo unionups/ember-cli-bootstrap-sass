@@ -2,7 +2,7 @@
   "name": "ember-cli-bootstrap-sass",
   "author": "Sergey Nikolaev",
   "description": "Include bootstrap-sass and bootstrap-for-ember into an ember-cli app",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,6 +27,7 @@
     "before": "ember-cli-sass"
   },
   "dependencies": {
-    "ember-cli-sass": "^2.0.2"
-  }
+    "ember-cli-sass": "^3.0.2"
+  },
+  "devDependencies": {}
 }
