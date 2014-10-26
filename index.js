@@ -16,6 +16,7 @@ module.exports = {
     }
 
     var options         = app.options['ember-cli-bootstrap-sass'] || {};
+    var ibs_opts        = options.importBootstrapJS
     var modulePath      = path.relative(app.project.root, __dirname);
     var bootstrapPath   = 'vendor/bootstrap-sass-official/assets';
     var emberBsPath     = 'vendor/ember-addons.bs_for_ember/dist';
@@ -39,8 +40,13 @@ module.exports = {
       app.import(path_join(javascriptsPath, fileName + '.max.js'));
     });
 
-    if (options.importBootstrapJS) {
+    // Import js from bootstrap
+    if(ibs_opts === true) {
       app.import(path_join(bootstrapPath, 'javascripts/bootstrap.js'));
+    } else if (ibs_opts instanceof Array){
+      ibs_opts.forEach(function(fileName) {
+        app.import(path_join(bootstrapPath, 'javascripts/bootstrap', fileName + '.js'));
+      });  
     }
 
     // Import glyphicons
