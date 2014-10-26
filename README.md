@@ -106,3 +106,23 @@ var app = new EmberApp({
 
 module.exports = app.toTree();
 ```
+This will be imported [bootstrap.js](https://github.com/twbs/bootstrap-sass/blob/master/assets/javascripts/bootstrap.js) that contains all of `Bootstrap JavaScript` plugins into the project, concatenated in the [correct order](https://github.com/twbs/bootstrap-sass/blob/master/assets/javascripts/bootstrap-sprockets.js).
+
+You can optionally specify exactly which individual `Bootstrap JavaScript` plugins should be imported into the project via the `importBootstrapJS` option, which accepts an array of plugin names:
+You can check dependencies in the [Bootstrap JS documentation](http://getbootstrap.com/javascript/#transitions).
+
+```javascript
+//your-bootstrap-app/Brocfile.js
+
+/* global require, module */
+
+var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+
+var app = new EmberApp({
+  'ember-cli-bootstrap-sass': {
+    'importBootstrapJS': ['affix','collapse']
+  }
+});
+
+module.exports = app.toTree();
+```
