@@ -24,9 +24,13 @@ module.exports = {
     var jsFiles         = options.components ? options.components : fs.readdirSync(path_join(modulePath, javascriptsPath));
 
 
-    app.options.sassOptions = {
-        includePaths: [ path_join(modulePath, bootstrapPath, 'stylesheets') ]
-    };
+  // Non-destructively add paths to SASS
+	if (! app.options.sassOptions.includePaths ) {
+		app.options.sassOptions.includePaths = [];
+	}
+	app.options.sassOptions.includePaths.push(path_join(modulePath, bootstrapPath, 'stylesheets'));
+	app.options.sassOptions.includePaths.push(path_join(modulePath, bootstrapPath, 'stylesheets/bootstrap'));
+	app.options.sassOptions.includePaths.push(path_join(modulePath, bootstrapPath, 'stylesheets/bootstrap/mixins'));
 
     // Import css from bootstrap
 
