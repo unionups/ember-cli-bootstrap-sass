@@ -25,9 +25,10 @@ module.exports = {
 
 
   // Non-destructively add paths to SASS
-	if (! app.options.sassOptions.includePaths ) {
-		app.options.sassOptions.includePaths = [];
-	}
+  // Non-destructively add paths to SASS
+  app.options.sassOptions = app.options.sassOptions || {}
+  app.options.sassOptions.includePaths = app.options.sassOptions.includePaths || []
+  
 	app.options.sassOptions.includePaths.push(path_join(modulePath, bootstrapPath, 'stylesheets'));
 	app.options.sassOptions.includePaths.push(path_join(modulePath, bootstrapPath, 'stylesheets/bootstrap'));
 	app.options.sassOptions.includePaths.push(path_join(modulePath, bootstrapPath, 'stylesheets/bootstrap/mixins'));
