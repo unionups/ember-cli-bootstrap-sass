@@ -52,10 +52,10 @@ You can also import components explicitly. To start with a full list of modules 
 
 
 
-##Importing specific bootstrap_for_ember components
+##Importing bootstrap_for_ember components
 By default, all of the bootstrap_for_ember components will be imported
-into the project. You can optionally specify exactly which components
-should be imported into the project via the `component` option, which
+into the project.  You can optionally specify exactly which components
+should be imported into the project via the `components` option, which
 accepts an array of component names:
 
 
@@ -74,7 +74,26 @@ var app = new EmberApp({
 
 module.exports = app.toTree();
 ```
+If you set `components` option to `true`, all of the bootstrap_for_ember components will be imported
+into the project (this is default settings).
 
+You can `fully exclude bootstrap_for_ember` from the project by setting `components` option to `false` or `[]`:
+
+```javascript
+//your-bootstrap-app/Brocfile.js
+
+/* global require, module */
+
+var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+
+var app = new EmberApp({
+  'ember-cli-bootstrap-sass': {
+    'components': false
+  }
+});
+
+module.exports = app.toTree();
+```
 
 ## Importing javascript from Twitter Bootstrap
 The goal of this addon is to utilize the bootstrap_for_ember library to
