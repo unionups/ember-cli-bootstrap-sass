@@ -21,7 +21,18 @@ module.exports = {
     var bootstrapPath   = 'vendor/bootstrap-sass-official/assets';
     var emberBsPath     = 'vendor/ember-addons.bs_for_ember/dist';
     var javascriptsPath = path_join(emberBsPath, 'js');
-    var jsFiles         = options.components ? options.components : fs.readdirSync(path_join(modulePath, javascriptsPath));
+    
+    switch (options.components) {
+      case true:
+        var jsFiles = fs.readdirSync(path_join(modulePath, javascriptsPath));
+        break
+      case false:
+        var jsFiles = false;
+        break
+      default:
+        var jsFiles = options.components ? options.components : fs.readdirSync(path_join(modulePath, javascriptsPath));
+        break
+    }
 
 
   // Non-destructively add paths to SASS
@@ -37,13 +48,15 @@ module.exports = {
 
     app.import(path_join(emberBsPath, 'css/bs-growl-notifications.min.css'));
 
-    // Import javascript files
-    app.import(path_join(javascriptsPath, 'bs-core.max.js')); // Import bs-core first
+    if ((jsFiles !== []) && (jsFiles !== false) ) {
+      // Import javascript files from bootstrap-for-ember
+      app.import(path_join(javascriptsPath, 'bs-core.max.js')); // Import bs-core first
 
-    jsFiles.forEach(function(file) {
-      var fileName = file.split('.')[0];
-      app.import(path_join(javascriptsPath, fileName + '.max.js'));
-    });
+      jsFiles.forEach(function(file) {
+        var fileName = file.split('.')[0];
+        app.import(path_join(javascriptsPath, fileName + '.max.js'));
+      });
+    }
 
     // Import js from bootstrap
     if(ibs_opts === true) {
