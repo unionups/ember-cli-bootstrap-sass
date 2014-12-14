@@ -3,6 +3,8 @@ ember-cli-bootstrap-sass
 
 ###ember-cli-bootstrap-sass requires ember-cli version '0.0.41' or later
 
+###[bootstrap-for-ember](https://github.com/ember-addons/bootstrap-for-ember) has templates compiled by `Handlebars ~1` and do not compateble with `Ember 1.9` that require `Handlebars ~2`. ( how to exclude it from project see below ).
+
 This is an ember-cli addon that includes styles from [official Sass port](http://getbootstrap.com/css/#sass) of [Twitter Bootstrap](http://getbootstrap.com/) into your ember-cli project.
 
 This addon utilizes the [bootstrap_for_ember](https://github.com/ember-addons/bootstrap-for-ember) library, which provides a collection of Ember components based on Twitter Bootstrap V3.
