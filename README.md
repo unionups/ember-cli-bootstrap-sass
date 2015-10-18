@@ -1,3 +1,4 @@
+[![Dependency Status](https://david-dm.org/unionups/ember-cli-bootstrap-sass.svg)](https://david-dm.org/unionups/ember-cli-bootstrap-sass)
 ember-cli-bootstrap-sass
 ========================
 

@@ -27,7 +27,7 @@
     "before": "ember-cli-sass"
   },
   "dependencies": {
-    "ember-cli-sass": "^3.0.2"
+    "ember-cli-sass": "^5.0.1"
   },
   "devDependencies": {}
 }
